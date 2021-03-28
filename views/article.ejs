@@ -1,0 +1,38 @@
+<%-include('../views/partial/header')-%>
+<%if(data!=''){%>
+<div class="justify-content-center">
+      <div style="margin-top: 80px;display:flex;flex-wrap: wrap;background-color: darkorange;height:auto;width:auto;font-size:large;">
+        <%=data[0].title%>
+      </div><br>
+      <div style="width:auto; display:flex;flex-wrap: wrap; background-color: whitesmoke;">
+          <%-data[0].content%>
+      </div>
+      <div style="padding-bottom:40px; padding-top:20px;" class="justify-content-center">
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            <%if(previous.length>0){%>
+            <li class="page-item"><a class="page-link" href="/article/<%=previous[0].pid%>">Previous</a></li>
+             <%}else{%>
+              <li class="page-item"><a class="page-link disabled">Previous</a></li>
+              <%}%>
+            <%if(next.length !=''){%>
+            <li class="page-item"><a class="page-link" href="/article/<%=next[0].pid%>">Next</a></li>
+            <%}else{%>
+              <li class="page-item"><a class="page-link disabled">Next</a></li>
+            <%}%>
+          </ul>
+        </nav>
+      </div>
+</div>
+<%}else{%>
+  <div class="justify-content-center">
+    <div style="margin-top: 80px;display:flex;flex-wrap: wrap;height:auto;width:auto;font-size:large;">
+     
+    </div><br>
+    <div style="width:auto; display:flex;flex-wrap: wrap; background-color: whitesmoke;">
+        no data found
+    </div>
+</div>
+<%}%>
+
+<%-include('../views/partial/footer')-%>

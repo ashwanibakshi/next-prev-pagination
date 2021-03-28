@@ -1,0 +1,16 @@
+<%-include('../views/partial/header')-%>
+<div class="row" style="border-style: solid; display:flexbox; margin-top:100px;margin-bottom:50px; width:100%; height:fit-content;"> 
+  <%if(data){%>
+   <%for(var i=0;i< data.length; i++){%>
+     <div class="col-md-4" style="padding-bottom:10px;">
+    <div class="card" style="width: 18rem;">
+        <div class="card-body" >
+          <p class="card-text"><%=data[i].title%></p><a href="/article/<%=data[i].pid%>">readmore</a>
+        </div>
+      </div>
+    </div>
+    <%}%>
+    <%}%>
+</div>
+
+<%-include('../views/partial/footer')-%>
